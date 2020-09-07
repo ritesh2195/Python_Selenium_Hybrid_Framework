@@ -8,7 +8,6 @@ from pageObjects.AddCustomePage import addCustomer
 
 
 class Test_003_addCustomer:
-
     baseURL = ReadConfig.getApplicationURL()
 
     Email = ReadConfig.getEmail()
@@ -44,9 +43,9 @@ class Test_003_addCustomer:
 
         # self.email = random_generator() + "@gmail.com"
 
-        self.addCust.setEmail("hsbj@gmail.com")
+        self.addCust.setEmail("vdbsbjlkbjb@gmail.com")
 
-        self.addCust.setPassword("vgysyhc12")
+        self.addCust.setPassword("vgysyhghc12")
 
         self.addCust.setFirstName("bshbsbwjbj")
 
@@ -68,7 +67,18 @@ class Test_003_addCustomer:
 
         self.addCust.clickSave()
 
+        self.msg=self.driver.find_element_by_xpath("//div[@class='alert alert-success alert-dismissable']").text
 
+        if "The new customer has been added successfully.1" in self.msg:
 
-# def random_generator(size=8, chars=string.ascii_lowercase + string.digits()):
-# return ''.join(random.choice(chars) for x in range(size))
+            assert True
+
+        else:
+
+            self.driver.save_screenshot(".\\Screenshots\\"+"test_AddCustomer.png")
+
+            assert True ==False
+
+        self.driver.close()
+#def random_generator(size=8, chars=string.ascii_lowercase + string.digits()):
+#    return ''.join(random.choice(chars) for x in range(size))
