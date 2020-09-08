@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="edfd0c8b-d5a7-4be8-97bd-21b2aa9d7e7d" name="Default Changelist" comment="&quot;nopCommerce&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geckodriver.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logfile.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/testCases/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCases/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testCases/test_AddCustomer.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCases/test_AddCustomer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testCases/test_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCases/test_login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testCases/test_loginDDT.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCases/test_loginDDT.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testCases/test_searchByEmail.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCases/test_searchByEmail.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

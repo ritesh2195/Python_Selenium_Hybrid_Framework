@@ -1,14 +1,24 @@
 from selenium import webdriver
 import pytest
 
+driver = None
+
 
 @pytest.fixture
 def setup(browser):
+    global driver
+
     if browser == 'chrome':
         driver = webdriver.Chrome(executable_path="D:\\PYTHON\\chromedriver.exe")
 
     elif browser == 'firefox':
         driver = webdriver.Firefox(executable_path="D:\\PYTHON\\geckodriver.exe")
+
+    driver.maximize_window()
+
+    # yield
+
+    # driver.close()
 
     return driver
 

@@ -6,7 +6,6 @@ from pageObjects.LoginPage import Login
 
 
 class TestSearch_004:
-
     baseURL = ReadConfig.getApplicationURL()
 
     Email = ReadConfig.getEmail()
@@ -16,10 +15,7 @@ class TestSearch_004:
     logger = LogGen.loggen()
 
     def test_searchgCustomer(self, setup):
-
         self.driver = setup
-
-        self.driver.maximize_window()
 
         self.driver.get(self.baseURL)
 
@@ -41,10 +37,12 @@ class TestSearch_004:
 
         self.search = searchCustomer(self.driver)
 
-        self.search.setEmail("ritesh21@gmail.com")
+        self.search.setEmail("victoria_victoria@nopCommerce.com")
 
         self.search.clickSearch()
 
-        status = self.search.searchByEmail("ritesh21@gmail.com")
+        status = self.search.searchByEmail("victoria_victoria@nopCommerce.com")
 
         assert True == status
+
+        self.driver.close()

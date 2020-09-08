@@ -19,8 +19,6 @@ class Test_003_addCustomer:
     def test_addingCustomer(self, setup):
         self.driver = setup
 
-        self.driver.maximize_window()
-
         self.driver.get(self.baseURL)
 
         self.driver.implicitly_wait(10)
@@ -80,5 +78,7 @@ class Test_003_addCustomer:
             assert True ==False
 
         self.driver.close()
+
+    #       self.driver.close()
 #def random_generator(size=8, chars=string.ascii_lowercase + string.digits()):
 #    return ''.join(random.choice(chars) for x in range(size))

@@ -50,8 +50,6 @@ class Test_001_login:
 
         self.driver = setup
 
-        self.driver.maximize_window()
-
         self.driver.get(self.baseURL)
 
         self.lp=Login(self.driver)
@@ -78,5 +76,7 @@ class Test_001_login:
             self.logger.info("****Login Function is Failed****")
 
             assert False
+
+        self.driver.close()
 
 

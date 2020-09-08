@@ -13,15 +13,13 @@ class Test_002_loginDDT:
 
     logger=LogGen.loggen()
 
-    def test_login(self,setup):
+    def test_login(self, setup):
 
         self.logger.info("*********Login Test Test_002 Started***********")
 
         self.logger.info("********Verifying Logim Function***********")
 
         self.driver = setup
-
-        self.driver.maximize_window()
 
         self.driver.get(self.baseURL)
 
@@ -33,7 +31,7 @@ class Test_002_loginDDT:
 
         for r in range(2,self.rows+1):
 
-            self.email=XLUtil.readData(self.path,'Sheet1',r,1)
+            self.email = XLUtil.readData(self.path,'Sheet1',r,1)
 
             self.password=XLUtil.readData(self.path,'Sheet1',r,2)
 
@@ -93,3 +91,5 @@ class Test_002_loginDDT:
             self.driver.close()
 
             assert False
+
+        self.driver.close()
