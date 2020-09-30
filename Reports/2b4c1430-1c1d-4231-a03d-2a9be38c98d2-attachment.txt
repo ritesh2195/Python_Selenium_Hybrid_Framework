@@ -1,0 +1,2 @@
+[32mINFO    [0m Test_001_login:test_login.py:20 *********Home Page Test Started***********
+[32mINFO    [0m Test_001_login:test_login.py:22 ********Verifying HomePage Title***********

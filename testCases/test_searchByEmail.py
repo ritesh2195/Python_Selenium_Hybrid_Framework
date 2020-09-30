@@ -1,11 +1,15 @@
+import time
+
 from pageObjects.SearchCustomer import searchCustomer
+from testCases.BaseClass import BaseClass
 from utilities.customLogger import LogGen
 from utilities.readProperties import ReadConfig
 from pageObjects.AddCustomePage import addCustomer
 from pageObjects.LoginPage import Login
+import pytest
 
 
-class TestSearch_004:
+class TestSearch_004(BaseClass):
     baseURL = ReadConfig.getApplicationURL()
 
     Email = ReadConfig.getEmail()
@@ -15,11 +19,7 @@ class TestSearch_004:
     logger = LogGen.loggen()
 
     def test_searchgCustomer(self, setup):
-        self.driver = setup
-
-        self.driver.get(self.baseURL)
-
-        self.driver.implicitly_wait(10)
+        # self.driver = setup
 
         self.lp = Login(self.driver)
 
@@ -45,4 +45,6 @@ class TestSearch_004:
 
         assert True == status
 
-        self.driver.close()
+        time.sleep(3)
+
+        # self.driver.close()

@@ -1,0 +1,3 @@
+[32mINFO    [0m Test_001_login:test_login.py:49 *********Login Test Started***********
+[32mINFO    [0m Test_001_login:test_login.py:51 ********Verifying Logim Function***********
+[32mINFO    [0m Test_001_login:test_login.py:69 ****Login Function is Passed****

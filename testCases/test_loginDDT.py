@@ -3,15 +3,17 @@ import time
 import pytest
 from selenium import webdriver
 from pageObjects.LoginPage import Login
+from testCases.BaseClass import BaseClass
 from utilities.customLogger import LogGen
 from utilities.readProperties import ReadConfig
 from utilities import XLUtil
 
-class Test_002_loginDDT:
-    baseURL = ReadConfig.getApplicationURL()
-    path=".//TestData/nopCommerce.xlsx"
 
-    logger=LogGen.loggen()
+class Test_002_loginDDT(BaseClass):
+    baseURL = ReadConfig.getApplicationURL()
+    path = ".//TestData/nopCommerce.xlsx"
+
+    logger = LogGen.loggen()
 
     def test_login(self, setup):
 
@@ -19,23 +21,21 @@ class Test_002_loginDDT:
 
         self.logger.info("********Verifying Logim Function***********")
 
-        self.driver = setup
+        #self.driver = setup
 
-        self.driver.get(self.baseURL)
+        self.lp = Login(self.driver)
 
-        self.lp=Login(self.driver)
+        self.rows = XLUtil.getRowCount(self.path, 'Sheet1')
 
-        self.rows=XLUtil.getRowCount(self.path,'Sheet1')
+        list_status = []
 
-        list_status=[]
+        for r in range(2, self.rows + 1):
 
-        for r in range(2,self.rows+1):
+            self.email = XLUtil.readData(self.path, 'Sheet1', r, 1)
 
-            self.email = XLUtil.readData(self.path,'Sheet1',r,1)
+            self.password = XLUtil.readData(self.path, 'Sheet1', r, 2)
 
-            self.password=XLUtil.readData(self.path,'Sheet1',r,2)
-
-            self.exp=XLUtil.readData(self.path,'Sheet1',r,3)
+            self.exp = XLUtil.readData(self.path, 'Sheet1', r, 3)
 
             self.lp.setEmail(self.email)
 
@@ -45,13 +45,13 @@ class Test_002_loginDDT:
 
             time.sleep(5)
 
-            actualTitle=self.driver.title
+            actualTitle = self.driver.title
 
-            expTitle="Dashboard / nopCommerce administration"
+            expTitle = "Dashboard / nopCommerce administration"
 
-            if actualTitle==expTitle:
+            if actualTitle == expTitle:
 
-                if self.exp=="pass":
+                if self.exp == "pass":
 
                     self.logger.info("passed")
 
@@ -59,7 +59,7 @@ class Test_002_loginDDT:
 
                     list_status.append("pass")
 
-                elif self.exp=="fail":
+                elif self.exp == "fail":
 
                     self.logger.info("failed")
 
@@ -67,29 +67,29 @@ class Test_002_loginDDT:
 
                     list_status.append("fail")
 
-            elif actualTitle!=expTitle:
+            elif actualTitle != expTitle:
 
-                if self.exp=="pass":
+                if self.exp == "pass":
 
                     self.logger.info("failed")
 
                     list_status.append("fail")
 
-                elif self.exp=="fail":
+                elif self.exp == "fail":
 
                     self.logger.info("pass")
 
                     list_status.append("pass")
 
         if "fail" not in list_status:
-            self.driver.close()
+            #self.driver.close()
 
             assert True
 
         else:
 
-            self.driver.close()
+            #self.driver.close()
 
             assert False
 
-        self.driver.close()
+        # self.driver.close()

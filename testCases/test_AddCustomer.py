@@ -2,12 +2,13 @@ import random
 import string
 
 from pageObjects.LoginPage import Login
+from testCases.BaseClass import BaseClass
 from utilities.customLogger import LogGen
 from utilities.readProperties import ReadConfig
 from pageObjects.AddCustomePage import addCustomer
 
 
-class Test_003_addCustomer:
+class Test_003_addCustomer(BaseClass):
     baseURL = ReadConfig.getApplicationURL()
 
     Email = ReadConfig.getEmail()
@@ -17,11 +18,7 @@ class Test_003_addCustomer:
     logger = LogGen.loggen()
 
     def test_addingCustomer(self, setup):
-        self.driver = setup
-
-        self.driver.get(self.baseURL)
-
-        self.driver.implicitly_wait(10)
+        # self.driver = setup
 
         self.lp = Login(self.driver)
 
@@ -65,7 +62,7 @@ class Test_003_addCustomer:
 
         self.addCust.clickSave()
 
-        self.msg=self.driver.find_element_by_xpath("//div[@class='alert alert-success alert-dismissable']").text
+        self.msg = self.driver.find_element_by_xpath("//div[@class='alert alert-success alert-dismissable']").text
 
         if "The new customer has been added successfully.1" in self.msg:
 
@@ -73,12 +70,12 @@ class Test_003_addCustomer:
 
         else:
 
-            self.driver.save_screenshot(".\\Screenshots\\"+"test_AddCustomer.png")
+            self.driver.save_screenshot(".\\Screenshots\\" + "test_AddCustomer.png")
 
-            assert True ==False
+            assert True == False
 
-        self.driver.close()
+        # self.driver.close()
 
     #       self.driver.close()
-#def random_generator(size=8, chars=string.ascii_lowercase + string.digits()):
+# def random_generator(size=8, chars=string.ascii_lowercase + string.digits()):
 #    return ''.join(random.choice(chars) for x in range(size))

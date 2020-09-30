@@ -1,35 +1,45 @@
 from selenium import webdriver
 import pytest
 
+from utilities.readProperties import ReadConfig
+
 driver = None
 
 
-@pytest.fixture
-def setup(browser):
+@pytest.fixture(scope="class")
+def setup(request):
     global driver
 
-    if browser == 'chrome':
+    browser_name = request.config.getoption("browser_name")
+
+    if browser_name == "chrome":
+
         driver = webdriver.Chrome(executable_path="D:\\PYTHON\\chromedriver.exe")
 
-    elif browser == 'firefox':
+    elif browser_name == "firefox":
+
         driver = webdriver.Firefox(executable_path="D:\\PYTHON\\geckodriver.exe")
 
     driver.maximize_window()
 
-    # yield
+    driver.get(ReadConfig.getApplicationURL())
 
-    # driver.close()
+    driver.implicitly_wait(10)
 
-    return driver
+    request.cls.driver = driver
+
+    yield
+
+    driver.close()
 
 
 def pytest_addoption(parser):
-    parser.addoption("--browser", action="store", default="chrome")
+    parser.addoption("--browser_name", action="store", default="chrome")
 
 
-@pytest.fixture()
-def browser(request):
-    return request.config.getoption("--browser")
+#@pytest.fixture()
+#def browser(request):
+#    return request.config.getoption("--browser")
 
 
 def pytest_configure(config):
