@@ -12,13 +12,12 @@ class Test_002_loginDDT(BaseClass):
 
     @pytest.mark.parametrize("email, password", getData())
     def test_login(self, email, password):
+
         self.logger.info("*********Login Test Test_002 Started***********")
 
         self.logger.info("********Verifying Logim Function***********")
 
         self.lp = Login(self.driver)
-
-        list_status = []
 
         self.lp.doLogin(email, password)
 

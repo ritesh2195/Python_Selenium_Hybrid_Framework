@@ -1,5 +1,5 @@
 import time
-from selenium import webdriver
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
 
 from pageObjects.BasePage import basePage
@@ -7,53 +7,55 @@ from pageObjects.BasePage import basePage
 
 class addCustomer(basePage):
 
-    link_customer_xpath = "//a[@href='#']//span[text()='Customers']"
+    __link_customer_xpath = (By.XPATH, "//a[@href='#']//span[text()='Customers']")
 
-    link_customer_menu_xpath = "//a[@class='menu-item-link']//span[text()='Customers']"
+    __link_customer_menu_xpath = (By.XPATH, "//a[@class='menu-item-link']//span[text()='Customers']")
 
-    Add_new_xpath = "//a[@class='btn bg-blue']"
+    __Add_new_xpath = (By.XPATH, "//a[@class='btn bg-blue']")
 
-    Email_box_css = "#Email"
+    __Email_box_css = (By.CSS_SELECTOR, "#Email")
 
-    Password_box_id = "Password"
+    __Password_box_id = (By.ID, "Password")
 
-    FirstName_box_css = "#FirstName"
+    __FirstName_box_css = (By.CSS_SELECTOR, "#FirstName")
 
-    LastName_box_css = "#LastName"
+    __LastName_box_css = (By.CSS_SELECTOR, "#LastName")
 
-    Gender_Male_id = "Gender_Male"
+    __Gender_Male_id = (By.ID, "Gender_Male")
 
-    Gender_Female_id = "Gender_Female"
+    __Gender_Female_id = (By.ID, "Gender_Female")
 
-    DOB_box_id = "DateOfBirth"
+    __DOB_box_id = (By.ID, "DateOfBirth")
 
-    Company_box_id = "Company"
+    __Company_box_id = (By.ID, "Company")
 
-    tax_exempt_click_id = "IsTaxExempt"
+    __tax_exempt_click_id = (By.ID, "IsTaxExempt")
 
-    Newsletter_xpath = "//span[text()='Your store name']"
+    __Newsletter_xpath = (By.XPATH, "//span[text()='Your store name']")
 
-    TestStore2_xpath = "//span[text()='Test store 2']"
+    __TestStore2_xpath = (By.XPATH, "//span[text()='Test store 2']")
 
-    YourStore_xpath = "//span[text()='Your store name']"
+    __YourStore_xpath = (By.XPATH, "//span[text()='Your store name']")
 
-    customerRole_xpath = "//span[text()='Registered']"
+    __customerRole_xpath = (By.XPATH, "//span[text()='Registered']")
 
-    Administrator_xpath = "//span[text()='Administrators']"
+    __Administrator_xpath = (By.XPATH, "//span[text()='Administrators']")
 
-    Guest_xpath = "//*[text()='Guests']"
+    __Guest_xpath = (By.XPATH, "//*[text()='Guests']")
 
-    Registered_xpath = "//span[text()='Registered']"
+    __Registered_xpath = (By.XPATH, "//span[text()='Registered']")
 
-    Vendors_xpath = "//span[text()='Vendors']"
+    __Vendors_xpath = (By.XPATH, "//span[text()='Vendors']")
 
-    vendor_box_css = "select[name='VendorId']"
+    __vendor_box_css = (By.CSS_SELECTOR, "select[name='VendorId']")
 
-    Active_box_css = "#Active"
+    __Active_box_css = (By.CSS_SELECTOR, "#Active")
 
-    Admin_comment_css = "#AdminComment"
+    __Admin_comment_css = (By.CSS_SELECTOR, "#AdminComment")
 
-    Save_xpath = "//button[@name='save']"
+    __Save_xpath = (By.XPATH, "//button[@name='save']")
+
+    __SuccessMessage_xpath = (By.XPATH, "//div[@class='alert alert-success alert-dismissable']")
 
     def __init__(self, driver):
 
@@ -61,91 +63,89 @@ class addCustomer(basePage):
 
     def clickCustomers(self):
 
-        self.driver.find_element_by_xpath(self.link_customer_xpath).click()
+        self.driver.find_element(*addCustomer.__link_customer_xpath).click()
 
     def clickCustomersMenu(self):
 
-        self.driver.find_element_by_xpath(self.link_customer_menu_xpath).click()
+        self.elementToClickable(self.__link_customer_menu_xpath)
+
+        self.driver.find_element(*addCustomer.__link_customer_menu_xpath).click()
 
     def addNew(self):
 
-        self.driver.find_element_by_xpath(self.Add_new_xpath).click()
+        self.driver.find_element(*addCustomer.__Add_new_xpath).click()
 
     def setEmail(self, email):
 
-        self.driver.find_element_by_css_selector(self.Email_box_css).clear()
+        self.driver.find_element(*addCustomer.__Email_box_css).clear()
 
-        self.driver.find_element_by_css_selector(self.Email_box_css).send_keys(email)
+        self.driver.find_element(*addCustomer.__Email_box_css).send_keys(email)
 
     def setPassword(self, password):
 
-        self.driver.find_element_by_id(self.Password_box_id).clear()
+        self.driver.find_element(*addCustomer.__Password_box_id).clear()
 
-        self.driver.find_element_by_id(self.Password_box_id).send_keys(password)
+        self.driver.find_element(*addCustomer.__Password_box_id).send_keys(password)
 
     def setFirstName(self, FirstName):
 
-        self.driver.find_element_by_css_selector(self.FirstName_box_css).clear()
+        self.driver.find_element(*addCustomer.__FirstName_box_css).clear()
 
-        self.driver.find_element_by_css_selector(self.FirstName_box_css).send_keys(FirstName)
+        self.driver.find_element(*addCustomer.__FirstName_box_css).send_keys(FirstName)
 
     def setLastName(self, LastName):
 
-        self.driver.find_element_by_css_selector(self.LastName_box_css).clear()
+        self.driver.find_element(*addCustomer.__LastName_box_css).clear()
 
-        self.driver.find_element_by_css_selector(self.LastName_box_css).send_keys(LastName)
+        self.driver.find_element(*addCustomer.__LastName_box_css).send_keys(LastName)
 
     def setDOB(self, dob):
 
-        self.driver.find_element_by_id(self.DOB_box_id).clear()
+        self.driver.find_element(*addCustomer.__DOB_box_id).clear()
 
-        self.driver.find_element_by_id(self.DOB_box_id).send_keys(dob)
+        self.driver.find_element(*addCustomer.__DOB_box_id).send_keys(dob)
 
     def setCompany(self, company):
 
-        self.driver.find_element_by_id(self.Company_box_id).clear()
+        self.driver.find_element(*addCustomer.__Company_box_id).clear()
 
-        self.driver.find_element_by_id(self.Company_box_id).send_keys(company)
+        self.driver.find_element(*addCustomer.__Company_box_id).send_keys(company)
 
     def clickTaxExempt(self):
 
-        self.driver.find_element_by_id(self.tax_exempt_click_id).click()
+        self.driver.find_element(*addCustomer.__tax_exempt_click_id).click()
 
     def setCustomerRoles(self, role):
 
-        self.driver.find_element_by_xpath(self.customerRole_xpath).click()
-
-        # self.driver.find_element_by_xpath(self.customerRole_xpath).clear()
-
-        time.sleep(3)
+        self.driver.find_element(*addCustomer.__customerRole_xpath).click()
 
         if role == "Registered":
 
-            self.listItem = self.driver.find_element_by_xpath(self.Registered_xpath)
+            self.elementToClickable(self.__Registered_xpath)
+
+            self.listItem = self.driver.find_element(*addCustomer.__Registered_xpath)
 
         elif role == "Administrator":
 
-            self.listItem = self.driver.find_element_by_xpath(self.Administrator_xpath)
+            self.elementToClickable(self.__Administrator_xpath)
+
+            self.listItem = self.driver.find_element(*addCustomer.__Administrator_xpath)
 
         elif role == "Guests":
 
-            time.sleep(3)
-
             self.driver.find_element_by_xpath("//*[@id='SelectedCustomerRoleIds_taglist']/li/span[2]").click()
 
-            self.listItem = self.driver.find_element_by_xpath(self.Guest_xpath)
+            self.listItem = self.driver.find_element(*addCustomer.__Guest_xpath)
 
         elif role == "Vendors":
 
-            self.listItem = self.driver.find_element_by_xpath(self.Vendors_xpath).click()
-
-        time.sleep(3)
+            self.listItem = self.driver.find_element(*addCustomer.__Vendors_xpath)
 
         self.driver.execute_script("arguments[0].click();", self.listItem)
 
     def setManagerVendor(self, value):
 
-        element = self.driver.find_element_by_css_selector(self.vendor_box_css)
+        element = self.driver.find_element(*addCustomer.__vendor_box_css)
 
         drp = Select(element)
 
@@ -155,20 +155,22 @@ class addCustomer(basePage):
 
         if gender == "Male":
 
-            self.driver.find_element_by_id(self.Gender_Male_id).click()
+            self.driver.find_element(*addCustomer.__Gender_Male_id).click()
 
         elif gender == "Female":
 
-            self.driver.find_element_by_id(self.Gender_Female_id).click()
+            self.driver.find_element(*addCustomer.__Gender_Female_id).click()
 
     def setAdminComment(self, comment):
 
-        self.driver.find_element_by_css_selector(self.Admin_comment_css).send_keys(comment)
+        self.driver.find_element(*addCustomer.__Admin_comment_css).send_keys(comment)
 
     def clickSave(self):
 
-        self.driver.find_element_by_xpath(self.Save_xpath).click()
+        self.driver.find_element(*addCustomer.__Save_xpath).click()
 
     def verifyAddCustomerTest(self):
 
-        return self.driver.find_element_by_xpath("//div[@class='alert alert-success alert-dismissable']").text
+        return self.driver.find_element(*addCustomer.__SuccessMessage_xpath).text
+
+

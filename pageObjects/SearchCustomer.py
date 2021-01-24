@@ -5,17 +5,17 @@ from pageObjects.BasePage import basePage
 
 class searchCustomer(basePage):
 
-    Email_css = (By.CSS_SELECTOR, "#SearchEmail")
+    __Email_css = (By.CSS_SELECTOR, "#SearchEmail")
 
-    FirstName_css = (By.CSS_SELECTOR, "#SearchFirstName")
+    __FirstName_css = (By.CSS_SELECTOR, "#SearchFirstName")
 
-    LastName_css = (By.CSS_SELECTOR, "#SearchLastName")
+    __LastName_css = (By.CSS_SELECTOR, "#SearchLastName")
 
-    buttonSearch_css = (By.CSS_SELECTOR, "#search-customers")
+    __buttonSearch_css = (By.CSS_SELECTOR, "#search-customers")
 
-    searchEmail_xpath = (By.XPATH, "//tr//td[2]")
+    __searchEmail_xpath = (By.XPATH, "//tr//td[2]")
 
-    searchName = (By.XPATH, "//tr//td[3]")
+    __searchName = (By.XPATH, "//tr//td[3]")
 
     def __init__(self, driver):
 
@@ -23,35 +23,35 @@ class searchCustomer(basePage):
 
     def setEmail(self, email):
 
-        self.driver.find_element(*searchCustomer.Email_css).clear()
+        self.driver.find_element(*searchCustomer.__Email_css).clear()
 
-        self.driver.find_element(*searchCustomer.Email_css).send_keys(email)
+        self.driver.find_element(*searchCustomer.__Email_css).send_keys(email)
 
     def setFirstName(self, firstName):
 
-        self.driver.find_element(*searchCustomer.FirstName_css).clear()
+        self.driver.find_element(*searchCustomer.__FirstName_css).clear()
 
-        self.driver.find_element(*searchCustomer.FirstName_css).send_keys(firstName)
+        self.driver.find_element(*searchCustomer.__FirstName_css).send_keys(firstName)
 
     def setLastName(self, lastName):
 
-        self.driver.find_element(*searchCustomer.LastName_css).clear()
+        self.driver.find_element(*searchCustomer.__LastName_css).clear()
 
-        self.driver.find_element(*searchCustomer.LastName_css).send_keys(lastName)
+        self.driver.find_element(*searchCustomer.__LastName_css).send_keys(lastName)
 
     def clickSearch(self):
 
-        self.driver.find_element(*searchCustomer.buttonSearch_css).click()
+        self.driver.find_element(*searchCustomer.__buttonSearch_css).click()
 
     def searchByEmail(self, email):
 
-        text = self.driver.find_element(*searchCustomer.searchEmail_xpath).text
+        text = self.driver.find_element(*searchCustomer.__searchEmail_xpath).text
 
         return text
 
     def searchByName(self, name):
 
-        text = self.driver.find_element(*searchCustomer.searchName).text
+        text = self.driver.find_element(*searchCustomer.__searchName).text
 
         return text
 

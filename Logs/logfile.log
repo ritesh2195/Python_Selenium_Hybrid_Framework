@@ -10,3 +10,15 @@
 2021-01-24 19:34:32,750 :INFO : Test_002_loginDDT :*********Login Test Test_002 Started***********
 2021-01-24 19:34:32,751 :INFO : Test_002_loginDDT :********Verifying Logim Function***********
 2021-01-24 19:34:42,711 :INFO : Test_002_loginDDT :Login Test is passed
+2021-01-24 20:30:51,211 :INFO : Test_001_login :*********Home Page Test Started***********
+2021-01-24 20:30:51,212 :INFO : Test_001_login :********Verifying HomePage Title***********
+2021-01-24 20:30:51,218 :INFO : Test_001_login :****Home Page Test is passed****
+2021-01-24 20:30:51,223 :INFO : Test_001_login :*********Login Test Started***********
+2021-01-24 20:30:51,223 :INFO : Test_001_login :********Verifying Logim Function***********
+2021-01-24 20:30:59,024 :INFO : Test_001_login :****Login Function is Passed****
+2021-01-24 21:24:40,387 :INFO : Test_001_login :*********Home Page Test Started***********
+2021-01-24 21:24:40,388 :INFO : Test_001_login :********Verifying HomePage Title***********
+2021-01-24 21:24:40,396 :INFO : Test_001_login :****Home Page Test is passed****
+2021-01-24 21:24:40,400 :INFO : Test_001_login :*********Login Test Started***********
+2021-01-24 21:24:40,401 :INFO : Test_001_login :********Verifying Logim Function***********
+2021-01-24 21:24:51,147 :INFO : Test_001_login :****Login Function is Passed****

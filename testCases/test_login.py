@@ -10,6 +10,7 @@ from utilities.readProperties import ReadConfig
 
 @allure.severity(allure.severity_level.NORMAL)
 class Test_001_login(BaseClass):
+
     baseURL = ReadConfig.getApplicationURL()
     Email = ReadConfig.getEmail()
     Password = ReadConfig.getPassword()
@@ -42,13 +43,11 @@ class Test_001_login(BaseClass):
             assert False
 
     @allure.severity(allure.severity_level.MINOR)
-    def test_login(self, setup):
+    def test_login(self):
 
         self.logger.info("*********Login Test Started***********")
 
         self.logger.info("********Verifying Logim Function***********")
-
-        # self.driver = setup
 
         self.lp = Login(self.driver)
 
