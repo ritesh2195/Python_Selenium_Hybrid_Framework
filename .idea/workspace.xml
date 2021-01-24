@@ -4,15 +4,7 @@
     <list default="true" id="edfd0c8b-d5a7-4be8-97bd-21b2aa9d7e7d" name="Default Changelist" comment="&quot;nopCommerce&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/logfile.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/logfile.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestData/nopCommerce.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TestData/nopCommerce.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pageObjects/AddCustomePage.py" beforeDir="false" afterPath="$PROJECT_DIR$/pageObjects/AddCustomePage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pageObjects/LoginPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/pageObjects/LoginPage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testCases/BaseClass.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCases/BaseClass.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testCases/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCases/conftest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testCases/test_AddCustomer.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCases/test_AddCustomer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testCases/test_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCases/test_login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testCases/test_loginDDT.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCases/test_loginDDT.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testCases/test_searchByEmail.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCases/test_searchByEmail.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +46,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.__init__">
+  <component name="RunManager" selected="Python.RandomDataGenerator">
+    <configuration name="RandomDataGenerator" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="nopCommerce" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utilities" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utilities/RandomDataGenerator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="nopCommerce" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -120,6 +133,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.RandomDataGenerator" />
         <item itemvalue="Python.__init__" />
         <item itemvalue="Python.readProperties" />
         <item itemvalue="Python.test_login" />
