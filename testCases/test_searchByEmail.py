@@ -16,17 +16,15 @@ class TestSearch_004(BaseClass):
 
     Password = ReadConfig.getPassword()
 
+    searchEmail = ReadConfig.getsearchEmail()
+
     logger = LogGen.loggen()
 
     def test_searchgCustomer(self, setup):
 
         self.lp = Login(self.driver)
 
-        self.lp.setEmail(self.Email)
-
-        self.lp.setPassword(self.Password)
-
-        self.lp.clickLogin()
+        self.lp.doLogin(self.Email, self.Password)
 
         self.addCust = addCustomer(self.driver)
 
@@ -36,13 +34,12 @@ class TestSearch_004(BaseClass):
 
         self.search = searchCustomer(self.driver)
 
-        self.search.setEmail("victoria_victoria@nopCommerce.com")
+        self.search.setEmail(self.searchEmail)
 
         self.search.clickSearch()
 
-        status = self.search.searchByEmail("victoria_victoria@nopCommerce.com")
+        getEmail = self.search.searchByEmail(self.searchEmail)
 
-        assert True == status
+        assert self.searchEmail == getEmail
 
-        time.sleep(3)
 

@@ -2,8 +2,11 @@ import time
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
 
+from pageObjects.BasePage import basePage
 
-class addCustomer:
+
+class addCustomer(basePage):
+
     link_customer_xpath = "//a[@href='#']//span[text()='Customers']"
 
     link_customer_menu_xpath = "//a[@class='menu-item-link']//span[text()='Customers']"
@@ -54,7 +57,7 @@ class addCustomer:
 
     def __init__(self, driver):
 
-        self.driver = driver
+        super().__init__(driver)
 
     def clickCustomers(self):
 

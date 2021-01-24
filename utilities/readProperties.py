@@ -18,7 +18,11 @@ class ReadConfig():
 
     @staticmethod
     def getPassword():
-        password=config.get('common info','Password')
+        password = config.get('common info', 'Password')
 
         return password
 
+    @staticmethod
+    def getsearchEmail():
+
+        return config.get('common info', 'searchEmail')

@@ -1,7 +1,10 @@
 from selenium.webdriver.common.by import By
 
+from pageObjects.BasePage import basePage
 
-class searchCustomer:
+
+class searchCustomer(basePage):
+
     Email_css = (By.CSS_SELECTOR, "#SearchEmail")
 
     FirstName_css = (By.CSS_SELECTOR, "#SearchFirstName")
@@ -16,7 +19,7 @@ class searchCustomer:
 
     def __init__(self, driver):
 
-        self.driver=driver
+        super().__init__(driver)
 
     def setEmail(self, email):
 
@@ -42,27 +45,15 @@ class searchCustomer:
 
     def searchByEmail(self, email):
 
-        flag = False
-
         text = self.driver.find_element(*searchCustomer.searchEmail_xpath).text
 
-        if text == email:
-
-            flag = True
-
-        return flag
+        return text
 
     def searchByName(self, name):
 
-        flag = False
-
         text = self.driver.find_element(*searchCustomer.searchName).text
 
-        if text == name:
-
-            flag = True
-
-        return flag
+        return text
 
 
 

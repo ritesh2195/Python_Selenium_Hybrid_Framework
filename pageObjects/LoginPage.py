@@ -1,11 +1,16 @@
-class Login:
+from pageObjects.BasePage import basePage
+
+
+class Login(basePage):
+
     text_Email_css = "#Email"
     text_Password_css = "#Password"
     button_login_xpath = "//input[@type='submit']"
     button_logout_linktext = "Logout"
 
     def __init__(self, driver):
-        self.driver = driver
+
+        super().__init__(driver)
 
     def setEmail(self, email):
         self.driver.find_element_by_css_selector(self.text_Email_css).clear()
