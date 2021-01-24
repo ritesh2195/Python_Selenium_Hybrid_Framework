@@ -19,7 +19,6 @@ class TestSearch_004(BaseClass):
     logger = LogGen.loggen()
 
     def test_searchgCustomer(self, setup):
-        # self.driver = setup
 
         self.lp = Login(self.driver)
 
@@ -47,4 +46,3 @@ class TestSearch_004(BaseClass):
 
         time.sleep(3)
 
-        # self.driver.close()

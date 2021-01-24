@@ -140,25 +140,25 @@ class addCustomer:
 
         self.driver.execute_script("arguments[0].click();", self.listItem)
 
-    def setManagerVendor(self,value):
+    def setManagerVendor(self, value):
 
-        element=self.driver.find_element_by_css_selector(self.vendor_box_css)
+        element = self.driver.find_element_by_css_selector(self.vendor_box_css)
 
-        drp=Select(element)
+        drp = Select(element)
 
         drp.select_by_visible_text(value)
 
-    def setGender(self,gender):
+    def setGender(self, gender):
 
-        if gender=="Male":
+        if gender == "Male":
 
             self.driver.find_element_by_id(self.Gender_Male_id).click()
 
-        elif gender=="Female":
+        elif gender == "Female":
 
             self.driver.find_element_by_id(self.Gender_Female_id).click()
 
-    def setAdminComment(self,comment):
+    def setAdminComment(self, comment):
 
         self.driver.find_element_by_css_selector(self.Admin_comment_css).send_keys(comment)
 
@@ -166,3 +166,6 @@ class addCustomer:
 
         self.driver.find_element_by_xpath(self.Save_xpath).click()
 
+    def verifyAddCustomerTest(self):
+
+        return self.driver.find_element_by_xpath("//div[@class='alert alert-success alert-dismissable']").text

@@ -18,15 +18,10 @@ class Test_003_addCustomer(BaseClass):
     logger = LogGen.loggen()
 
     def test_addingCustomer(self, setup):
-        # self.driver = setup
 
         self.lp = Login(self.driver)
 
-        self.lp.setEmail(self.Email)
-
-        self.lp.setPassword(self.Password)
-
-        self.lp.clickLogin()
+        self.lp.doLogin(self.Email, self.Password)
 
         self.addCust = addCustomer(self.driver)
 
@@ -35,8 +30,6 @@ class Test_003_addCustomer(BaseClass):
         self.addCust.clickCustomersMenu()
 
         self.addCust.addNew()
-
-        # self.email = random_generator() + "@gmail.com"
 
         self.addCust.setEmail("vdbsbjlkbjb@gmail.com")
 
@@ -62,7 +55,7 @@ class Test_003_addCustomer(BaseClass):
 
         self.addCust.clickSave()
 
-        self.msg = self.driver.find_element_by_xpath("//div[@class='alert alert-success alert-dismissable']").text
+        self.msg = self.addCust.verifyAddCustomerTest()
 
         if "The new customer has been added successfully.1" in self.msg:
 
@@ -70,12 +63,6 @@ class Test_003_addCustomer(BaseClass):
 
         else:
 
-            self.driver.save_screenshot(".\\Screenshots\\" + "test_AddCustomer.png")
+            self.captureScreenshot()
 
             assert True == False
-
-        # self.driver.close()
-
-    #       self.driver.close()
-# def random_generator(size=8, chars=string.ascii_lowercase + string.digits()):
-#    return ''.join(random.choice(chars) for x in range(size))

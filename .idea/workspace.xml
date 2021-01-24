@@ -4,8 +4,10 @@
     <list default="true" id="edfd0c8b-d5a7-4be8-97bd-21b2aa9d7e7d" name="Default Changelist" comment="&quot;nopCommerce&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/logfile.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/logfile.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/assets/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reports/report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestData/nopCommerce.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/TestData/nopCommerce.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pageObjects/AddCustomePage.py" beforeDir="false" afterPath="$PROJECT_DIR$/pageObjects/AddCustomePage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pageObjects/LoginPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/pageObjects/LoginPage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testCases/BaseClass.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCases/BaseClass.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testCases/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCases/conftest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testCases/test_AddCustomer.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCases/test_AddCustomer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testCases/test_login.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCases/test_login.py" afterDir="false" />
@@ -32,7 +34,7 @@
   <component name="ProjectId" id="1fiCNep7Eb7iPDQjmIg610aVJ6T" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/utilities" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">

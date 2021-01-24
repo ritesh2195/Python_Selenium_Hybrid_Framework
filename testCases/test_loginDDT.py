@@ -1,95 +1,44 @@
 import time
 
 import pytest
-from selenium import webdriver
 from pageObjects.LoginPage import Login
 from testCases.BaseClass import BaseClass
 from utilities.customLogger import LogGen
-from utilities.readProperties import ReadConfig
-from utilities import XLUtil
+from utilities.dataProvider import getData
 
 
 class Test_002_loginDDT(BaseClass):
-    baseURL = ReadConfig.getApplicationURL()
-    path = ".//TestData/nopCommerce.xlsx"
-
     logger = LogGen.loggen()
 
-    def test_login(self, setup):
-
+    @pytest.mark.parametrize("email, password", getData())
+    def test_login(self, email, password):
         self.logger.info("*********Login Test Test_002 Started***********")
 
         self.logger.info("********Verifying Logim Function***********")
 
-        #self.driver = setup
-
         self.lp = Login(self.driver)
-
-        self.rows = XLUtil.getRowCount(self.path, 'Sheet1')
 
         list_status = []
 
-        for r in range(2, self.rows + 1):
+        self.lp.doLogin(email, password)
 
-            self.email = XLUtil.readData(self.path, 'Sheet1', r, 1)
+        time.sleep(5)
 
-            self.password = XLUtil.readData(self.path, 'Sheet1', r, 2)
+        actualTitle = self.lp.getTitle()
 
-            self.exp = XLUtil.readData(self.path, 'Sheet1', r, 3)
+        expTitle = "Dashboard / nopCommerce administration"
 
-            self.lp.setEmail(self.email)
+        try:
 
-            self.lp.setPassword(self.password)
+            assert actualTitle == expTitle
 
-            self.lp.clickLogin()
+            self.logger.info("Login Test is passed")
 
-            time.sleep(5)
+            self.lp.clickLogout()
 
-            actualTitle = self.driver.title
+        except AssertionError:
 
-            expTitle = "Dashboard / nopCommerce administration"
+            self.logger.info("Test case is failed")
 
-            if actualTitle == expTitle:
+            self.captureScreenshot()
 
-                if self.exp == "pass":
-
-                    self.logger.info("passed")
-
-                    self.lp.clickLogout()
-
-                    list_status.append("pass")
-
-                elif self.exp == "fail":
-
-                    self.logger.info("failed")
-
-                    self.lp.clickLogout()
-
-                    list_status.append("fail")
-
-            elif actualTitle != expTitle:
-
-                if self.exp == "pass":
-
-                    self.logger.info("failed")
-
-                    list_status.append("fail")
-
-                elif self.exp == "fail":
-
-                    self.logger.info("pass")
-
-                    list_status.append("pass")
-
-        if "fail" not in list_status:
-            #self.driver.close()
-
-            assert True
-
-        else:
-
-            #self.driver.close()
-
-            assert False
-
-        # self.driver.close()

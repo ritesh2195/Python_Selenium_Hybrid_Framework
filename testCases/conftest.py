@@ -1,5 +1,7 @@
 from selenium import webdriver
 import pytest
+from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.firefox import GeckoDriverManager
 
 from utilities.readProperties import ReadConfig
 
@@ -14,11 +16,11 @@ def setup(request):
 
     if browser_name == "chrome":
 
-        driver = webdriver.Chrome(executable_path="D:\\PYTHON\\chromedriver.exe")
+        driver = webdriver.Chrome(ChromeDriverManager().install())
 
     elif browser_name == "firefox":
 
-        driver = webdriver.Firefox(executable_path="D:\\PYTHON\\geckodriver.exe")
+        driver = webdriver.Firefox(executable_path='D:\\PYTHON\\geckodriver.exe')
 
     driver.maximize_window()
 
@@ -30,16 +32,11 @@ def setup(request):
 
     yield
 
-    driver.close()
+    driver.quit()
 
 
 def pytest_addoption(parser):
     parser.addoption("--browser_name", action="store", default="chrome")
-
-
-#@pytest.fixture()
-#def browser(request):
-#    return request.config.getoption("--browser")
 
 
 def pytest_configure(config):

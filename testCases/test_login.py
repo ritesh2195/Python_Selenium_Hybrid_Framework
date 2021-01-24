@@ -7,26 +7,23 @@ from testCases.BaseClass import BaseClass
 from utilities.customLogger import LogGen
 from utilities.readProperties import ReadConfig
 
+
 @allure.severity(allure.severity_level.NORMAL)
 class Test_001_login(BaseClass):
     baseURL = ReadConfig.getApplicationURL()
     Email = ReadConfig.getEmail()
     Password = ReadConfig.getPassword()
 
-    logger=LogGen.loggen()
+    logger = LogGen.loggen()
 
     @allure.severity(allure.severity_level.MINOR)
-    def test_homePageTitle(self,setup):
+    def test_homePageTitle(self, setup):
 
         self.logger.info("*********Home Page Test Started***********")
 
         self.logger.info("********Verifying HomePage Title***********")
 
-        #self.driver = setup
-
-        actualTitle=self.driver.title
-
-        #self.driver.close()
+        actualTitle = self.driver.title
 
         if actualTitle == "Your store. Login":
 
@@ -36,11 +33,11 @@ class Test_001_login(BaseClass):
 
         else:
 
-            allure.attach(self.driver.get_screenshot_as_png(),name="loginScreen", attachment_type=AttachmentType.PNG)
+            allure.attach(self.driver.get_screenshot_as_png(), name="loginScreen", attachment_type=AttachmentType.PNG)
 
             self.logger.info("****Home Page Test is failed****")
 
-            self.driver.save_screenshot('.\\Screenshots\\'+'homePage.png')
+            self.driver.save_screenshot('.\\Screenshots\\' + 'homePage.png')
 
             assert False
 
@@ -51,19 +48,13 @@ class Test_001_login(BaseClass):
 
         self.logger.info("********Verifying Logim Function***********")
 
-        #self.driver = setup
+        # self.driver = setup
 
-        self.lp=Login(self.driver)
+        self.lp = Login(self.driver)
 
-        self.lp.setEmail(self.Email)
-
-        self.lp.setPassword(self.Password)
-
-        self.lp.clickLogin()
+        self.lp.doLogin(self.Email, self.Password)
 
         actualTitle = self.driver.title
-
-        #self.driver.close()
 
         if actualTitle == "Dashboard / nopCommerce administration":
 
@@ -78,7 +69,3 @@ class Test_001_login(BaseClass):
             self.logger.info("****Login Function is Failed****")
 
             assert False
-
-        #self.driver.close()
-
-
