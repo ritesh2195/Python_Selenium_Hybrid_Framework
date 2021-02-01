@@ -6,9 +6,14 @@ from pageObjects.BasePage import basePage
 class Login(basePage):
 
     __text_Email_css = (By.CSS_SELECTOR, "#Email")
+
     __text_Password_css = (By.CSS_SELECTOR, "#Password")
+
     __button_login_xpath = (By.XPATH, "//input[@type='submit']")
+
     __button_logout_linktext = (By.LINK_TEXT, "Logout")
+
+    __UserName__css = (By.CSS_SELECTOR, ".account-info")
 
     def __init__(self, driver):
 
@@ -46,3 +51,7 @@ class Login(basePage):
     def getTitle(self):
 
         return self.getPageTitle()
+
+    def getUserName(self):
+
+        return self.driver.find_element(*Login.__UserName__css).text

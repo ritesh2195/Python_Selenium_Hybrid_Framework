@@ -23,17 +23,14 @@ class Test_002_loginDDT(BaseClass):
 
         actualTitle = self.lp.getTitle()
 
+        userName = self.lp.getUserName()
+
         expTitle = "Dashboard / nopCommerce administration"
 
-        try:
+        assert actualTitle == expTitle
 
-            assert actualTitle == expTitle
+        assert userName == 'John Smith'
 
-            self.logger.info("Login Test is passed")
+        self.logger.info("Login Test is passed")
 
-        except AssertionError:
-
-            self.logger.info("Test case is failed")
-
-            self.captureScreenshot()
 

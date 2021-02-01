@@ -26,21 +26,7 @@ class Test_001_login(BaseClass):
 
         actualTitle = self.driver.title
 
-        if actualTitle == "Your store. Login":
-
-            self.logger.info("****Home Page Test is passed****")
-
-            assert True
-
-        else:
-
-            allure.attach(self.driver.get_screenshot_as_png(), name="loginScreen", attachment_type=AttachmentType.PNG)
-
-            self.logger.info("****Home Page Test is failed****")
-
-            self.driver.save_screenshot('.\\Screenshots\\' + 'homePage.png')
-
-            assert False
+        assert actualTitle == "Your store. Login"
 
     @allure.severity(allure.severity_level.MINOR)
     def test_login(self):
@@ -53,18 +39,13 @@ class Test_001_login(BaseClass):
 
         self.lp.doLogin(self.Email, self.Password)
 
-        actualTitle = self.driver.title
+        userName = self.lp.getUserName()
 
-        if actualTitle == "Dashboard / nopCommerce administration":
+        actualTitle = self.lp.getTitle()
 
-            self.logger.info("****Login Function is Passed****")
+        assert actualTitle == "Dashboard / nopCommerce administration"
 
-            assert True
+        assert userName == 'John Smith'
 
-        else:
 
-            self.driver.save_screenshot('D:\\PYTHON\\nopCommerce\\Screenshots\\abc.png')
 
-            self.logger.info("****Login Function is Failed****")
-
-            assert False

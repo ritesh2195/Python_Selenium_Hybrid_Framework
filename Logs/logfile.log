@@ -58,3 +58,27 @@
 2021-02-01 22:58:02,823 :INFO : Test_002_loginDDT :*********Login Test Test_002 Started***********
 2021-02-01 22:58:02,824 :INFO : Test_002_loginDDT :********Verifying Logim Function***********
 2021-02-01 22:58:04,161 :INFO : Test_002_loginDDT :Test case is failed
+2021-02-01 23:05:37,353 :INFO : Test_002_loginDDT :*********Login Test Test_002 Started***********
+2021-02-01 23:05:37,353 :INFO : Test_002_loginDDT :********Verifying Logim Function***********
+2021-02-01 23:05:39,611 :INFO : Test_002_loginDDT :*********Login Test Test_002 Started***********
+2021-02-01 23:05:39,611 :INFO : Test_002_loginDDT :********Verifying Logim Function***********
+2021-02-01 23:05:47,068 :INFO : Test_002_loginDDT :Login Test is passed
+2021-02-01 23:05:52,351 :INFO : Test_002_loginDDT :*********Login Test Test_002 Started***********
+2021-02-01 23:05:52,351 :INFO : Test_002_loginDDT :********Verifying Logim Function***********
+2021-02-01 23:05:54,419 :INFO : Test_002_loginDDT :*********Login Test Test_002 Started***********
+2021-02-01 23:05:54,420 :INFO : Test_002_loginDDT :********Verifying Logim Function***********
+2021-02-01 23:05:58,706 :INFO : Test_002_loginDDT :Login Test is passed
+2021-02-01 23:29:30,673 :INFO : Test_002_loginDDT :*********Login Test Test_002 Started***********
+2021-02-01 23:29:30,673 :INFO : Test_002_loginDDT :********Verifying Logim Function***********
+2021-02-01 23:29:30,743 :INFO : Test_002_loginDDT :*********Login Test Test_002 Started***********
+2021-02-01 23:29:30,744 :INFO : Test_002_loginDDT :********Verifying Logim Function***********
+2021-02-01 23:29:41,842 :INFO : Test_002_loginDDT :Login Test is passed
+2021-02-01 23:29:44,664 :INFO : Test_002_loginDDT :*********Login Test Test_002 Started***********
+2021-02-01 23:29:44,664 :INFO : Test_002_loginDDT :********Verifying Logim Function***********
+2021-02-01 23:29:52,717 :INFO : Test_002_loginDDT :*********Login Test Test_002 Started***********
+2021-02-01 23:29:52,717 :INFO : Test_002_loginDDT :********Verifying Logim Function***********
+2021-02-01 23:29:54,277 :INFO : Test_002_loginDDT :Login Test is passed
+2021-02-01 23:45:16,734 :INFO : Test_001_login :*********Home Page Test Started***********
+2021-02-01 23:45:16,734 :INFO : Test_001_login :********Verifying HomePage Title***********
+2021-02-01 23:45:29,197 :INFO : Test_001_login :*********Login Test Started***********
+2021-02-01 23:45:29,197 :INFO : Test_001_login :********Verifying Logim Function***********
