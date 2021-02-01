@@ -8,7 +8,7 @@ from utilities.readProperties import ReadConfig
 driver = None
 
 
-@pytest.fixture(scope="class")
+@pytest.fixture()
 def setup(request):
     global driver
 

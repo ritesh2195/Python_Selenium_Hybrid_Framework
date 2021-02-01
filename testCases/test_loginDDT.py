@@ -21,8 +21,6 @@ class Test_002_loginDDT(BaseClass):
 
         self.lp.doLogin(email, password)
 
-        time.sleep(5)
-
         actualTitle = self.lp.getTitle()
 
         expTitle = "Dashboard / nopCommerce administration"
@@ -32,8 +30,6 @@ class Test_002_loginDDT(BaseClass):
             assert actualTitle == expTitle
 
             self.logger.info("Login Test is passed")
-
-            self.lp.clickLogout()
 
         except AssertionError:
 

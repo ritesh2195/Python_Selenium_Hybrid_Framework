@@ -22,3 +22,39 @@
 2021-01-24 21:24:40,400 :INFO : Test_001_login :*********Login Test Started***********
 2021-01-24 21:24:40,401 :INFO : Test_001_login :********Verifying Logim Function***********
 2021-01-24 21:24:51,147 :INFO : Test_001_login :****Login Function is Passed****
+2021-02-01 22:54:23,934 :INFO : Test_002_loginDDT :*********Login Test Test_002 Started***********
+2021-02-01 22:54:23,988 :INFO : Test_002_loginDDT :********Verifying Logim Function***********
+2021-02-01 22:54:31,609 :INFO : Test_002_loginDDT :Login Test is passed
+2021-02-01 22:54:34,017 :INFO : Test_002_loginDDT :*********Login Test Test_002 Started***********
+2021-02-01 22:54:34,018 :INFO : Test_002_loginDDT :********Verifying Logim Function***********
+2021-02-01 22:54:34,445 :INFO : Test_002_loginDDT :Test case is failed
+2021-02-01 22:54:34,775 :INFO : Test_002_loginDDT :*********Login Test Test_002 Started***********
+2021-02-01 22:54:34,775 :INFO : Test_002_loginDDT :********Verifying Logim Function***********
+2021-02-01 22:54:35,930 :INFO : Test_002_loginDDT :Test case is failed
+2021-02-01 22:54:36,659 :INFO : Test_002_loginDDT :*********Login Test Test_002 Started***********
+2021-02-01 22:54:36,659 :INFO : Test_002_loginDDT :********Verifying Logim Function***********
+2021-02-01 22:54:40,089 :INFO : Test_002_loginDDT :Login Test is passed
+2021-02-01 22:56:23,127 :INFO : Test_002_loginDDT :*********Login Test Test_002 Started***********
+2021-02-01 22:56:23,127 :INFO : Test_002_loginDDT :********Verifying Logim Function***********
+2021-02-01 22:56:30,190 :INFO : Test_002_loginDDT :Login Test is passed
+2021-02-01 22:56:38,780 :INFO : Test_002_loginDDT :*********Login Test Test_002 Started***********
+2021-02-01 22:56:38,780 :INFO : Test_002_loginDDT :********Verifying Logim Function***********
+2021-02-01 22:56:40,320 :INFO : Test_002_loginDDT :Test case is failed
+2021-02-01 22:56:51,558 :INFO : Test_002_loginDDT :*********Login Test Test_002 Started***********
+2021-02-01 22:56:51,558 :INFO : Test_002_loginDDT :********Verifying Logim Function***********
+2021-02-01 22:56:52,725 :INFO : Test_002_loginDDT :Test case is failed
+2021-02-01 22:57:04,229 :INFO : Test_002_loginDDT :*********Login Test Test_002 Started***********
+2021-02-01 22:57:04,229 :INFO : Test_002_loginDDT :********Verifying Logim Function***********
+2021-02-01 22:57:10,151 :INFO : Test_002_loginDDT :Login Test is passed
+2021-02-01 22:57:45,214 :INFO : Test_002_loginDDT :*********Login Test Test_002 Started***********
+2021-02-01 22:57:45,215 :INFO : Test_002_loginDDT :********Verifying Logim Function***********
+2021-02-01 22:57:45,226 :INFO : Test_002_loginDDT :*********Login Test Test_002 Started***********
+2021-02-01 22:57:45,226 :INFO : Test_002_loginDDT :********Verifying Logim Function***********
+2021-02-01 22:57:47,841 :INFO : Test_002_loginDDT :Test case is failed
+2021-02-01 22:57:53,695 :INFO : Test_002_loginDDT :Login Test is passed
+2021-02-01 22:57:56,517 :INFO : Test_002_loginDDT :*********Login Test Test_002 Started***********
+2021-02-01 22:57:56,518 :INFO : Test_002_loginDDT :********Verifying Logim Function***********
+2021-02-01 22:58:00,980 :INFO : Test_002_loginDDT :Login Test is passed
+2021-02-01 22:58:02,823 :INFO : Test_002_loginDDT :*********Login Test Test_002 Started***********
+2021-02-01 22:58:02,824 :INFO : Test_002_loginDDT :********Verifying Logim Function***********
+2021-02-01 22:58:04,161 :INFO : Test_002_loginDDT :Test case is failed
